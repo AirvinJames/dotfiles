@@ -1,0 +1,74 @@
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/bar/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "~/.config/eww/bar/scripts/get-active-workspace")
+
+(defpoll time :interval "1s"
+`date +%H:%M:%S`)
+
+(defpoll brightness :interval "0.1s"
+  `brightnessctl -m -d 'intel_backlight' | awk -F, '{print substr($4, 0, length($4)-1)}'`)
+
+(deflisten music :initial ""
+  `playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true`)
+
+(defpoll vol :interval "0.1s"
+  `pamixer --get-volume-human`)
+
+(defwidget workspaces []
+  (eventbox :onscroll "bash ~/.config/eww/scripts/change-active-workspace {} ${current_workspace}" :class ""
+    (box :space-evenly false :class "workspaces" :spacing 10
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+          (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "⬤")
+            )
+          )
+        )
+      )
+    )
+  )
+
+(defwidget leftWidget []
+  (box :space-evenly false :spacing 10 :halign "start" :class "leftwidget"
+    (label :text "" :class "icon logo")
+    (box :space-evenly false :spacing 10 :class "time"
+      (label :text "" :class "icon")
+      (label :text "${time}")
+      )
+    (workspaces)
+    )
+)
+
+
+(defwidget centerWidget []
+  (box :space-evenly false :class "music" :spacing 10
+    (label :text "󰫔" :class "icon")
+    (label :text "${music != '' ? '${music}' : 'Offline'}")
+  )
+)
+
+(defwidget rightWidget []
+  (box :space-evenly false :spacing 10 :halign "end" :class "rightwidget"
+      (box :space-evenly false :spacing 10 :class "info vol"
+        (label :text "${vol == 'muted' ? '󰖁' : '󰕾'}" :class "icon")
+        (label :text "${vol}")
+      )
+      (box :space-evenly false :spacing 10 :class "info battery"
+        (label :text "${EWW_BATTERY.BAT1.status == 'Charging' ? '󰂄' : '󰁹'}" :class "icon")
+        (label :text "${EWW_BATTERY.BAT1.capacity}%")
+      )
+      (box :space-evenly false :spacing 10 :class "info brightness"
+        (label :text "󰃝" :class "icon")
+        (label :text "${brightness}%")
+      )
+  )
+)
+
+
+(defwidget statusbar []
+  (centerbox :orientation "h" 
+    (leftWidget)
+    (centerWidget)
+    (rightWidget)
+    )
+  )

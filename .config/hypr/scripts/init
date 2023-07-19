@@ -1,0 +1,10 @@
+#!/bin/bash
+
+pkill eww
+pkill swww
+
+swww init
+swww img "$HOME/Pictures/wallpapers/9WgJg0G.gif"
+
+eww daemon
+eww open --config "$HOME/.config/eww/bar" bar

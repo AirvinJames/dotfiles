@@ -1,0 +1,12 @@
+(defwindow bar
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "3px"
+                               :width "98%"
+                               :height "30px"
+                               :anchor "top center")
+           :stacking "fg"
+           :exclusive true
+(statusbar))
+
+(include "./widgets.yuck")
