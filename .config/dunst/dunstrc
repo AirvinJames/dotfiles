@@ -1,0 +1,19 @@
+[global]
+frame_color = "#f38ba8"
+separator_color = frame
+corner_radius = 10
+min_icon_size = 64
+max_icon_size = 128
+
+[urgency_low]
+background = "#1E1E2Ed9"
+foreground = "#CDD6F4"
+
+[urgency_normal]
+background = "#1E1E2E99"
+foreground = "#CDD6F4"
+
+[urgency_critical]
+background = "#1E1E2Ed9"
+foreground = "#CDD6F4"
+frame_color = "#FAB387"
