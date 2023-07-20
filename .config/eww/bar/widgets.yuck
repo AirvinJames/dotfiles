@@ -31,11 +31,7 @@
 (defwidget leftWidget []
   (box :space-evenly false :spacing 10 :halign "start" :class "leftwidget"
     (label :text "" :class "icon logo")
-    (box :space-evenly false :spacing 10 :class "time"
-      (label :text "" :class "icon")
-      (label :text "${time}")
-      )
-    (workspaces)
+        (workspaces)
     )
 )
 
@@ -49,6 +45,10 @@
 
 (defwidget rightWidget []
   (box :space-evenly false :spacing 10 :halign "end" :class "rightwidget"
+      (box :space-evenly false :spacing 10 :class "time"
+        (label :text "" :class "icon")
+        (label :text "${time}")
+      )
       (box :space-evenly false :spacing 10 :class "info vol"
         (label :text "${vol == 'muted' ? '󰖁' : '󰕾'}" :class "icon")
         (label :text "${vol}")
@@ -62,6 +62,7 @@
         (label :text "${brightness}%")
       )
   )
+
 )
 
 
