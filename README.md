@@ -6,7 +6,13 @@
 * Notification Daemon: [dunst][3]
 * Terminal: [kitty][6]
 * App launcher: [Rofi][4]
+* Wallpaper Daemon: [swww][7]
 * Wallpaper is from [here][5]
+
+Additional Packages:
+```
+jq brightnessctl pamixer grim slurp
+```
 
 [1]: https://hyprland.org/
 [2]: https://github.com/elkowar/eww
@@ -14,3 +20,4 @@
 [4]: https://github.com/davatorium/rofi
 [5]: https://imgur.com/gallery/0Slze
 [6]: https://sw.kovidgoyal.net/kitty/
+[7]: https://github.com/Horus645/swww
