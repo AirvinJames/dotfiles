@@ -1,4 +1,5 @@
 # Hyprland dotfiles
+
 ![image](./screenshot.png)
 
 * Window Manager: [Hyprland][1]
