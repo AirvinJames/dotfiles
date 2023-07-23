@@ -27,7 +27,7 @@
 .logo {
   padding: 10px;
   padding-left: 20px;
-  padding-right: 10px;
+  padding-right: 20px;
   color: @red;
 }
 /*
@@ -61,7 +61,6 @@
 /*Alt workspace theme*/
 .workspaces {
   padding: 10px;
-  border-radius: 8px;
 }
 
 .workspace-entry {
@@ -104,6 +103,9 @@
 
 .time {
   color: @sky;
+  padding-left: 5px;
+  padding-right: 20px;
+  border-right: 2px solid @crust;
 }
 
 .info {

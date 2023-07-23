@@ -2,7 +2,7 @@
 (deflisten current_workspace :initial "1" "~/.config/eww/bar/scripts/get-active-workspace")
 
 (defpoll time :interval "1s"
-`date +%H:%M:%S`)
+`date "+%H:%M %p"`)
 
 (defpoll brightness :interval "0.1s"
   `brightnessctl -m -d 'intel_backlight' | awk -F, '{print substr($4, 0, length($4)-1)}'`)
@@ -29,10 +29,14 @@
   )
 
 (defwidget leftWidget []
-  (box :space-evenly false :spacing 10 :halign "start" :class "leftwidget"
-    (label :text "" :class "icon logo")
-        (workspaces)
+  (box :space-evenly false :spacing 10 :halign "start" :class "leftwidget"  
+    (box :space-evenly false :spacing 10 :class "time"
+        (label :text "" :class "icon logo")
+        (label :text "" :class "icon")
+        (label :text "${time}")
     )
+    (workspaces)
+  )
 )
 
 
@@ -45,10 +49,6 @@
 
 (defwidget rightWidget []
   (box :space-evenly false :spacing 10 :halign "end" :class "rightwidget"
-      (box :space-evenly false :spacing 10 :class "time"
-        (label :text "" :class "icon")
-        (label :text "${time}")
-      )
       (box :space-evenly false :spacing 10 :class "info vol"
         (label :text "${vol == 'muted' ? '󰖁' : '󰕾'}" :class "icon")
         (label :text "${vol}")

@@ -4,7 +4,7 @@ pkill eww
 pkill swww
 
 swww init
-swww img "$HOME/Pictures/wallpapers/9WgJg0G.gif"
+swww img "$HOME/Pictures/wallpapers/ae86.gif"
 
 eww daemon
 eww open --config "$HOME/.config/eww/bar" bar

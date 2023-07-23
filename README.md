@@ -24,7 +24,7 @@ jq brightnessctl pamixer grim slurp
 [2]: https://github.com/elkowar/eww
 [3]: https://github.com/dunst-project/dunst
 [4]: https://github.com/davatorium/rofi
-[5]: https://imgur.com/gallery/0Slze
+[5]: https://www.reddit.com/r/PixelArt/comments/dulogi/ae86/
 [6]: https://sw.kovidgoyal.net/kitty/
 [7]: https://github.com/Horus645/swww
 [8]: https://github.com/catppuccin/rofi
