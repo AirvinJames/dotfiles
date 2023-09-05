@@ -2,7 +2,13 @@
 (deflisten current_workspace :initial "1" "~/.config/eww/bar/scripts/get-active-workspace")
 
 (defpoll time :interval "1s"
-`date "+%H:%M %p"`)
+  `date "+%H:%M %p"`)
+
+(defpoll date :interval "1s"
+  `date "+%A, %b %d, %Y"`)
+
+(defpoll wifi :interval "1s"
+  `nmcli -t -f NAME c show --active | head -n 1`)
 
 (defpoll brightness :interval "0.1s"
   `brightnessctl -m -d 'intel_backlight' | awk -F, '{print substr($4, 0, length($4)-1)}'`)
@@ -30,25 +36,28 @@
 
 (defwidget leftWidget []
   (box :space-evenly false :spacing 10 :halign "start" :class "leftwidget"  
-    (box :space-evenly false :spacing 10 :class "time"
-        (label :text "" :class "icon logo")
+    (box :space-evenly false :spacing 15 :class "info time"
         (label :text "" :class "icon")
         (label :text "${time}")
     )
-    (workspaces)
+    (box :space-evenly false :spacing 15 :class "info date"
+        (label :text "󰃭" :class "icon")
+        (label :text "${date}")
+          
+    )
   )
 )
 
 
 (defwidget centerWidget []
-  (box :space-evenly false :class "music" :spacing 10
+  (box :space-evenly false :class "music" :spacing 20
     (label :text "󰫔" :class "icon")
     (label :text "${music != '' ? '${music}' : 'Offline'}")
   )
 )
 
 (defwidget rightWidget []
-  (box :space-evenly false :spacing 10 :halign "end" :class "rightwidget"
+  (box :space-evenly false :spacing 20 :halign "end" :class "rightwidget"
       (box :space-evenly false :spacing 10 :class "info vol"
         (label :text "${vol == 'muted' ? '󰖁' : '󰕾'}" :class "icon")
         (label :text "${vol}")
@@ -61,6 +70,15 @@
         (label :text "󰃝" :class "icon")
         (label :text "${brightness}%")
       )
+      ;(box :space-evenly false :spacing 10 :class "info wifi"
+      ;  (label :text "${wifi != '' ? '󰤨' : '󰤭'}" :class "icon")
+      ;  (label :text "${wifi != '' ?  '${wifi}' : 'Disconnected'}" :class "icon")        
+      ;)
+
+      (box :space-evenly false :class "music" :spacing 20
+        (label :text "󰫔" :class "icon")
+        (label :text "${music != '' ? '${music}' : 'Offline'}")
+      ) 
   )
 
 )
@@ -69,7 +87,8 @@
 (defwidget statusbar []
   (centerbox :orientation "h" 
     (leftWidget)
-    (centerWidget)
+    ;;(centerWidget)
+    (workspaces)
     (rightWidget)
     )
   )

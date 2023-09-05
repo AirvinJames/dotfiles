@@ -7,29 +7,21 @@
 }
 
 .bar {
-  background: alpha(@crust, 1);
-  border-radius: 100px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .icon {
   padding: 0;
-  font-size: 20px;
+  font-size: 22px;
 }
 
-.leftwidget {
+.datetime {
   background: @base;
-  border-radius: 100px;
+  border-radius: 15px;
   padding-right: 10px;
 }
 
-.logo {
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: @red;
-}
 /*
 .workspaces {
   padding: 0;
@@ -61,6 +53,10 @@
 /*Alt workspace theme*/
 .workspaces {
   padding: 10px;
+  background: @base;
+  border-radius: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .workspace-entry {
@@ -69,10 +65,6 @@
   color: alpha(black, 0);
   border-radius: 100px;
   border: 2px solid @lavender;
-}
-
-.workspace-entry {
-  
 }
 
 .occupied {
@@ -86,32 +78,32 @@
 
 
 .music {
-  color: @teal;
+  color: @mauve;
   background: @base;
-  border-radius: 100px;
+  border-radius: 15px;
   padding-left: 25px;
   padding-right: 20px;
 }
 
 .rightwidget {
-  padding: 3px;
   background: @base;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 100px;
+  border-radius: 15px;
+}
+
+.info {
+  padding: 3px;
 }
 
 .time {
   color: @sky;
-  padding-left: 5px;
-  padding-right: 20px;
-  border-right: 2px solid @crust;
+  padding-left: 20px;
+  padding-right: 15px;
+  background: @base;
+  border-radius: 15px;
 }
 
-.info {
-  padding-left: 10px;
-  padding-right: 10px;
-}
 
 .vol {
   color:  @blue;
@@ -119,4 +111,21 @@
 
 .battery {
   color:  @yellow;
+}
+
+.date {
+  color: @mauve;
+  padding-left: 20px;
+  padding-right: 15px;
+  background: @base;
+  border-radius: 15px;
+
+}
+
+.wifi {
+  color: @peach;
+}
+
+.power {
+  color: @red;
 }

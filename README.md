@@ -1,6 +1,6 @@
 # Hyprland dotfiles
 
-![image](./rice.png)
+![image](./screenshot.png)
 
 * Window Manager: [Hyprland][1]
 * Top Bar: [Eww][2]
@@ -8,7 +8,8 @@
 * Terminal: [kitty][6]
 * App launcher: [Rofi][4]
 * Wallpaper Daemon: [swww][7]
-* Wallpaper is from [here][5]
+* Wallpaper is called The Neon Shallows by LEIKOI but recolored
+* Fetch: Neofetch
 
 Rofi and dunst theme is a slightly edited version of the catppuccin themes for [rofi][8] and [dunst][9].
 Eww bar theme is taken from the [catppuccin waybar theme][10]
@@ -19,6 +20,9 @@ Additional Packages:
 ```
 jq brightnessctl pamixer grim slurp
 ```
+
+
+
 
 [1]: https://hyprland.org/
 [2]: https://github.com/elkowar/eww
