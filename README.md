@@ -1,6 +1,6 @@
 # Hyprland dotfiles
 
-![image](./2023.png)
+![image](./2024.png)
 
 * Window Manager: [Hyprland][1]
 * Top Bar: [Eww][2]
@@ -9,7 +9,7 @@
 * App launcher: [Rofi][4]
 * Wallpaper Daemon: [swww][7]
 * Wallpaper is made by me
-* Fetch: Neofetch
+* Fetch script: pfetch
 
 Rofi and dunst theme is a slightly edited version of the catppuccin themes for [rofi][8] and [dunst][9].
 Eww bar theme is taken from the [catppuccin waybar theme][10]
