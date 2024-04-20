@@ -9,14 +9,17 @@ bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ytfetch='/usr/bin/python /home/airvin/projects/yt.py'
 alias ls="ls --color"
 alias v="nvim"
 alias neofetch="neofetch --config ~/.config/neofetch/config"
 
 source $HOME/powerlevel10k/powerlevel10k.zsh-theme
-source $HOME/build/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/build/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-neofetch
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

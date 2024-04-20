@@ -8,11 +8,13 @@
 * Terminal: [kitty][6]
 * App launcher: [Rofi][4]
 * Wallpaper Daemon: [swww][7]
-* Wallpaper is called The Neon Shallows by LEIKOI but recolored
+* Wallpaper is made by me
 * Fetch: Neofetch
 
 Rofi and dunst theme is a slightly edited version of the catppuccin themes for [rofi][8] and [dunst][9].
 Eww bar theme is taken from the [catppuccin waybar theme][10]
+
+Waybar config was based on one of the [examples][12] on the [waybar wiki](https://github.com/Alexays/Waybar/wiki/Examples).
 
 Hyprland Theme: [catppuccin/hyprland][11]
 
@@ -35,3 +37,5 @@ jq brightnessctl pamixer grim slurp
 [9]: https://github.com/catppuccin/dunst
 [10]: https://github.com/catppuccin/waybar
 [11]: https://github.com/catppuccin/hyprland
+[12]: https://github.com/rbnis/legacy-dotfiles/tree/master/.config/waybar
+

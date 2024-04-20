@@ -1,0 +1,110 @@
+$base: #1e1e2e;
+$mantle: #181825;
+$crust: #11111b;
+
+$surface0: #313244;
+$surface1: #45475a;
+$surface2: #585b70;
+
+$overlay0: #6c7086;
+$overlay1: #7f849c;
+$overlay2: #9399b2;
+
+$subtext0: #a6adc8;
+$subtext1: #bac2de;
+$text: #bac2de;
+
+$lavender: #b4befe;
+$blue: #b4befe;
+$sapphire: #74c7ec;
+$sky: #89dceb;
+$teal: #94e2d5;
+$green: #a6e3a1;
+$yellow:  #f9e2af;
+$peach: #fab387;
+$maroon: #eba0ac;
+$red: #f38ba8;
+$mauve: #cba6f7;
+$pink: #f5c2e7;
+$flamingo: #f2cdcd;
+$rosewater: #f5e0dc;
+
+$transparent: rgba(0,0,0,0);
+$transparent-base: rgba(30, 30, 46, 0.6);
+$gradient: linear-gradient(45deg, $surface0, $overlay0);
+
+.bar {
+	background-color: $crust;
+}
+
+.leftwidget {
+	padding: 5px;
+}
+
+.workspaces {
+	margin-left: 10px;
+}
+
+.workspace-entry {
+	color: $surface0;
+	background-color: $base;
+	padding: 2px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 3px;
+	font-size: 18px;
+}
+
+.occupied {
+	color: $text;
+	background-color: $base;
+}
+
+.current {
+	color: $base;
+	background: $lavender;
+}
+
+.rightwidget {
+	padding: 5px;
+	padding-right: 15px;
+}
+
+.icon {
+	font-size: 20px;
+	padding: 0;
+	margin: 0;
+}
+
+.info {
+	padding: 4px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 5px;
+	color: $base;
+	font-size: 14px;
+}
+
+.time {
+	background-color: $sky;
+}
+
+.date {
+	background-color: $teal;
+}
+
+.vol {
+	background-color: $green;
+}
+
+.battery {
+	background-color: $yellow;
+}
+
+.brightness {
+	background-color: $peach;
+}
+
+.wifi {
+	background-color: $mauve;
+}

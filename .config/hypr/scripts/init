@@ -1,10 +1,10 @@
 #!/bin/bash
 
 pkill eww
+pkill waybar
 pkill swww
 
 swww init
-swww img "$HOME/Pictures/wallpapers/the-neon-shallow.jpg"
+swww img "$HOME/Pictures/wallpapers/wallpaper.png"
 
-eww daemon
-eww open --config "$HOME/.config/eww/bar" bar
+waybar

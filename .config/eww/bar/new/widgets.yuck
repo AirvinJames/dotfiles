@@ -5,7 +5,7 @@
   `date "+%I:%M %p"`)
 
 (defpoll date :interval "1s"
-  `date "+%A, %b %d, %Y"`)
+  `date "+%a, %d %b"`)
 
 (defpoll wifi :interval "1s"
   `nmcli -t -f NAME c show --active | head -n 1`)
@@ -26,7 +26,7 @@
       (for workspace in workspaces
         (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
           (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
-            (label :text "⬤")
+            (label :text "${workspace.id}")
             )
           )
         )
@@ -35,29 +35,22 @@
   )
 
 (defwidget leftWidget []
-  (box :space-evenly false :spacing 10 :halign "start" :class "leftwidget"  
-    (box :space-evenly false :spacing 15 :class "info time"
-        (label :text "" :class "icon")
-        (label :text "${time}")
-    )
-    (box :space-evenly false :spacing 15 :class "info date"
-        (label :text "󰃭" :class "icon")
-        (label :text "${date}")
-          
+    (box :space-evenly false :spacing 20 :halign "start" :class "leftwidget"
+      (workspaces)
     )
   )
-)
-
-
-(defwidget centerWidget []
-  (box :space-evenly false :class "music" :spacing 20
-    (label :text "󰫔" :class "icon")
-    (label :text "${music != '' ? '${music}' : 'Offline'}")
-  )
-)
 
 (defwidget rightWidget []
-  (box :space-evenly false :spacing 20 :halign "end" :class "rightwidget"
+  (box :space-evenly false :spacing 10 :halign "end" :class "rightwidget"
+
+      (box :space-evenly false :spacing 15 :class "info time"
+        (label :text "" :class "icon")
+        (label :text "${time}")
+      )
+      (box :space-evenly false :spacing 15 :class "info date"
+        (label :text "󰃭" :class "icon")
+        (label :text "${date}")    
+      )
       (box :space-evenly false :spacing 10 :class "info vol"
         (label :text "${vol == 'muted' ? '󰖁' : '󰕾'}" :class "icon")
         (label :text "${vol}")
@@ -72,19 +65,17 @@
       )
       (box :space-evenly false :spacing 10 :class "info wifi"
         (label :text "${wifi != '' ? '󰤨' : '󰤭'}" :class "icon")
-        (label :text "${wifi != '' ?  '${wifi}' : 'Disconnected'}" )        
+        (label :text "${wifi != '' ?  '${wifi}' : 'Disconnected'}")        
       )
 
-  )
+    )
 
 )
 
 
 (defwidget statusbar []
-  (centerbox :orientation "h" 
+  (box :orientation "h" 
     (leftWidget)
-    ;;(centerWidget)
-    (workspaces)
     (rightWidget)
     )
   )
