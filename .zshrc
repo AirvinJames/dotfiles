@@ -13,6 +13,7 @@ alias ytfetch='/usr/bin/python /home/airvin/projects/yt.py'
 alias ls="ls --color"
 alias v="nvim"
 alias neofetch="neofetch --config ~/.config/neofetch/config"
+alias zed="zeditor"
 
 source $HOME/powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
