@@ -1,0 +1,23 @@
+# Colors
+
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#8d7ceb
+progress-color=over #313244
+
+# Other
+font=JetBrainsMonoNerdFont
+
+width=480
+height=160
+
+padding=16
+
+border-radius=6
+
+max-icon-size=96
+
+default-timeout=10000
+
+[urgency=high]
+border-color=#fab387

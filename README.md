@@ -1,6 +1,6 @@
 # Hyprland dotfiles
 
-![image](./2024.png)
+![image](./2025.png)
 
 * Window Manager: [Hyprland][1]
 * Top Bar: [Eww][2]
